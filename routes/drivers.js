@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const Driver = require('../models/driver')
+const Driver = require('../models/Driver')
 
 //Get All Drivers
 router.get('/', async (req, res) => {

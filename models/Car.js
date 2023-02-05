@@ -1,7 +1,11 @@
 const mongoose =  require('mongoose')
 
-const driverSchema = new mongoose.Schema({
+const carSchema = new mongoose.Schema({
     name: {
+        type: String,
+        required: true
+    },
+    type: {
         type: String,
         required: true
     },
@@ -11,4 +15,4 @@ const driverSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Driver', driverSchema)
+module.exports = mongoose.model('Car', carSchema)

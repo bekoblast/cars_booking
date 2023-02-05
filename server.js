@@ -9,6 +9,7 @@ const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index')
 const driverRouter = require('./routes/drivers')
+const carRouter = require('./routes/cars')
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
@@ -27,5 +28,6 @@ db.once('open', () => console.log('Connected to DB'))
 
 app.use('/', indexRouter)
 app.use('/drivers', driverRouter)
+app.use('/cars', carRouter)
 
 app.listen(process.env.PORT || 3000)
