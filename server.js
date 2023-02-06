@@ -8,6 +8,7 @@ const expressLayouts = require("express-ejs-layouts")
 const bodyParser = require('body-parser')
 
 const indexRouter = require('./routes/index')
+const userRouter = require('./routes/users')
 const driverRouter = require('./routes/drivers')
 const carRouter = require('./routes/cars')
 
@@ -27,6 +28,7 @@ db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connected to DB'))
 
 app.use('/', indexRouter)
+app.use('/users', userRouter)
 app.use('/drivers', driverRouter)
 app.use('/cars', carRouter)
 
